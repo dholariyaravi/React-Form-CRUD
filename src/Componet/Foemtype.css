@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+.Form_11{
+   padding: 40px;
+}
+.Form_12pro{
+  width: 40%;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+.Form_13pro{
+  width: 60px;
+  font-size: x-large;
+}
+
+.button_pro{
+  width: 40%;
+}
+.Date_pro{
+ 
+  border-radius: 7px;
+  white-space: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  .Form_11 .Form_12pro{
+   width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Form_13pro{
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Form_11 .Form_12pro{
+   width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Date_pro{
+   width: 40%;
+   float: right;
+  }
+}
