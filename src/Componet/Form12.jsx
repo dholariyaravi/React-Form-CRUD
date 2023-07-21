@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import  './Foemtype.css'
 
 const Form12 = () => {
+
+const {inputarr , setinputatt} = useState ([]) ;
   
 const [data, setdata] = useState ({
      Fristname : "",
@@ -11,7 +13,7 @@ const [data, setdata] = useState ({
      State : "",
      country : "",
      Gender : "",
-     BoXx : {},
+     BoXx : {}
  })
 
     const myhendal = (e) => {
@@ -21,6 +23,14 @@ const [data, setdata] = useState ({
    const mychenaj = (e) => {
        e.preventDefault();
        console.log(data);
+   }
+
+
+     let {Fristname, Lastname, City, Aadress, State, country, Gender} = data;
+   function chenjhendal () {
+    setinputatt([...inputarr, {Fristname,Lastname,City, Aadress, State, country, Gender}])
+    console.log(inputarr);
+    console.log(data);
    }
 
 
@@ -83,9 +93,11 @@ const [data, setdata] = useState ({
                 <span className='px-4'></span> 
                    <input type='submit' value='save' className='btn btn-dark px-5 button_pro'/>
 
+                   <button onClick={chenjhendal}>Add Item</button>
+
             </form>
 
-            <div>
+            {/* <div>
                 {data?.data?.map((index, value) => {
                      return (
                         <div key={index}>
@@ -100,13 +112,32 @@ const [data, setdata] = useState ({
                         </div>
                      )
                 })}
-
-
-                {/* {data?.object?.map( (val, index) => {
+                {data?.object?.map( (val, index) => {
                     return( <>{val.name} </> )
-                })} */}
-                
-            </div>
+                })}
+            </div> */}
+
+          
+            {/* <table border={1} width="30%" cellPadding={10}>
+            <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>khdudj</td>
+                </tr>
+                {
+                     data.map (
+                        (info,ind) => {
+                            return (
+                                <tr key={ind}>
+                                    <td>{info.Fristname}</td>
+                                </tr>
+                            )
+                        }
+                     )
+                }
+             </tbody>
+            </table> */}
+          
 
             
         </div>
