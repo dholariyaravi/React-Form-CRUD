@@ -185,13 +185,13 @@ const Form12 = () => {
       <table className='input_Line_data' border={1} max-width="60%" cellPadding={27}>
             {submittedData.map( (data , index ) => (
                <tr key={index}>
-                  <td> Fristname:{data.Fristname}</td>
-                  <td> Lastname:{data.Lastname}</td>
-                  <td> City:{data.City}</td>
-                  <td> Aadress:{data.Aadress}</td>
-                  <td> State:{data.State}</td>
-                  <td> country:{data.country}</td>
-                  <td> Gender:{data.Gender}</td>
+                  <td> Fristname:- {data.Fristname}</td>
+                  <td> Lastname:- {data.Lastname}</td>
+                  <td> City:- {data.City}</td>
+                  <td> Aadress:- {data.Aadress}</td>
+                  <td> State:- {data.State}</td>
+                  <td> country:- {data.country}</td>
+                  <td> Gender:- {data.Gender}</td>
               </tr>
             ))}
             </table>
