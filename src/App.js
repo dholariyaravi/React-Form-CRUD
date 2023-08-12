@@ -4,6 +4,8 @@ import Form12 from './Componet/Form12';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dataprnit from './Componet/Dataprnit';
 import FormComponent from './FormComponent';
+import Login from './Componet/Login';
+import Home from './Componet/Home';
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
    <BrowserRouter>
      <Routes>
       <Route path="/" element={<Form12/>}/>
-      <Route path="/data" element={<Dataprnit/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/home" element={<Home/>}/>
      </Routes>
      </BrowserRouter>
 

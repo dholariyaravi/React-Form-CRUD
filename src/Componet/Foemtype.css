@@ -1,11 +1,13 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .Form_11{
    padding: 40px;
 }
 .Form_12pro{
-  width: 40%;
+  width: 100%;
   padding: 10px;
   border: 2px solid;
   border-radius: 10px;
@@ -16,7 +18,12 @@
 }
 
 .button_pro{
+  margin-left: 18%;
   width: 40%;
+  justify-content: center;
+  display: block;
+  align-items: center;
+
 }
 .Date_pro{
  
@@ -25,7 +32,7 @@
 }
 input{
   border: none;
-  box-shadow: 0px 0px 10px rgb(67, 65, 65, 4);
+  /* box-shadow: 0px 0px 10px rgb(67, 65, 65, 4); */
   font-size: 1.2rem;
   outline: none;
   padding: 10px;
@@ -38,8 +45,25 @@ input:focus-within{
 input:focus-within{
   border: 2px solid aqua;
 }
-td,th{
+
+.center_gred{
   text-align: center;
+}
+
+.center_gred1{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.Data_Print{
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+  .Data_Print{
+   width: 30%;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -54,23 +78,22 @@ td,th{
   }
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .Form_11 .Form_12pro{
    width: 100%;
   }
-}
+} */
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .Date_pro{
    width: 40%;
    float: right;
   }
-}
+} */
 
 
 /* ================================  */
  .input_Line_data {
-
  border: 2px solid rgb(192, 192, 206);
  border-radius: 24px; 
  text-align: center;
@@ -85,4 +108,22 @@ td,th{
   }
 }
 
- 
+/* =========================================  */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tbody, td, tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2;}
