@@ -47,7 +47,12 @@ function Login (propa) {
     <div>
 
       <form onSubmit={handleSubmit} className="Form_11">
-      <h2>Login</h2>
+
+      <h2><i className="fa fa-user-circle-o" style={{color:'darkblue'}} 
+       aria-hidden="true"><span   style={{color:'darkslategray'}} className="p-2">   Sign in</span></i>
+      </h2>
+
+      {/* <h2>Sign in</h2> */}
         <div className='col-sm-6'>
         <input
           type="text"
@@ -71,11 +76,10 @@ function Login (propa) {
           <br/>
           <br/> 
         <input type="submit" className='px-5 btn btn-dark' value='Login' />
-      
       </form>
 
         <div className='text-start px-4'>
-                <Link to={"/"} >Already have an account?</Link>
+                <Link to={"/"} >New Regested account ?</Link>
         </div>
  
     </div>

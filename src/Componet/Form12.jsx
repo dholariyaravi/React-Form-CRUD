@@ -5,21 +5,22 @@ import Dataprnit from "./Dataprnit";
 import { Link, json } from 'react-router-dom';
 import Login from "./Login";
 import { toast } from "react-toastify";
+import validation from "./Validation";
 
-const Form12 = (propa) => {
-
+const Form12 = () => {
 
   const [submittedData, setSubmittedData] = useState(() => {
     const saved = localStorage.getItem("USERData");
     const initialValue = JSON.parse(saved);
     return initialValue || "";
-
   });
 
   // const [submittedData, setSubmittedData] = useState([]);
+  
+  const naviget = useNavigate()
 
   const [add, setadd] = useState(-1);
-  const naviget = useNavigate()
+
   const [data, setdata] = useState({
     Date: "",
     Fristname: "",
@@ -29,6 +30,10 @@ const Form12 = (propa) => {
     Gender: "",
     password: "",
   });
+
+    // validator in req ............ 
+    const [errors, seterrors] = useState({});
+    // console.log(errors)
 
   const myhendal = (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
@@ -40,7 +45,6 @@ const Form12 = (propa) => {
     localStorage.setItem('USERData', JSON.stringify(submittedData));
 
   }, [submittedData]);
-
 
   // ========================Delete=======================
   function mydelete(index) {
@@ -55,15 +59,15 @@ const Form12 = (propa) => {
     setdata(updata)
     setadd(index)
   }
-  // ===============================================
+  // ===================data submit and..============================
   const mychenaj = (e) => {
     e.preventDefault();
-    console.log(data);
+
+    seterrors(validation(data));
+ 
 
     setSubmittedData((predata) => [...predata, data]);
     setdata({ data })
-
-    // alert('Registration successful');
 
     if (add >= 0) {
       let p = [...submittedData]
@@ -83,8 +87,6 @@ const Form12 = (propa) => {
     setadd(-1);
 
   };
-  // naviget('/login')
-
 
   return (
     <div>
@@ -119,8 +121,10 @@ const Form12 = (propa) => {
               onChange={myhendal}
             />
             <br />
+            {errors.Fristname && <span style={{ color: 'red' }}>{errors.Fristname}</span>}
             <br />
           </div>
+        
 
           <div className="col-sm-6">
             <label className="text-start">Lastname</label>
@@ -133,6 +137,7 @@ const Form12 = (propa) => {
               onChange={myhendal}
             />
             <br />
+            {errors.Lastname && <span style={{ color: 'red' }}>{errors.Lastname}</span>}
             <br />
           </div>
 
@@ -146,6 +151,7 @@ const Form12 = (propa) => {
               placeholder="email"
               onChange={myhendal}
             />
+             {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
             <br />
             <br />
           </div>
@@ -174,6 +180,7 @@ const Form12 = (propa) => {
               placeholder="password"
               onChange={myhendal}
             />
+             {errors.password && <span style={{ color: 'red' }}>{errors.password}</span>}
             <br />
             <br />
           </div>
@@ -183,7 +190,7 @@ const Form12 = (propa) => {
 
           <div className="col-sm-6">
             <br />
-            <div className="center_gred py-4">
+            <div className="center_gred py-3">
               <span className="">Gender :-- </span>
               <input
                 type="radio"
@@ -197,6 +204,7 @@ const Form12 = (propa) => {
                 name="Gender"
                 value="Femel"
                 onChange={myhendal}
+
               />
               Femel
               <input
@@ -212,12 +220,14 @@ const Form12 = (propa) => {
 
         <br />
         <br />
-        <span className="px-4"></span>
+        <span className="px-5"></span>
         <input
           type="submit"
           value="submit"
           className="btn btn-dark button_pro text-center"
         />
+        
+         {/* <button className="btn btn-outline-success px-5" >validation</button> */}
 
       </form>
       <div className='text-center'>

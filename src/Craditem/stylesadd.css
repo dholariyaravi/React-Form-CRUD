@@ -1,0 +1,24 @@
+
+*{
+    box-sizing: border-box;
+}
+.img_add{
+    width: auto;
+    height: 240px;
+    
+}
+.add_card{
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    margin: 10px;
+}
+.center_btn{
+ justify-content: end;
+ text-align: end;
+ display: block;
+
+}
+.btn_style{
+margin: 14px;
+}
